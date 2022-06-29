@@ -10,7 +10,7 @@
 - name: Install QEMU & virt-manager
   become: true
   pacman:
-    name: qemu-desktop,virt-manager,libvirt,dnsmasq,iptables-nft
+    name: qemu-desktop,virt-manager,libvirt,dnsmasq,iptables
 
 - name: Add user to libvirt group
   become: true
@@ -24,6 +24,11 @@
   become: true
   shell: sudo systemctl start libvirtd
 
+
+- name: Install QEMU & virt-manager
+  become: true
+  pacman:
+    name: minikube 
 
 - name: Install Minikube
   become: true
