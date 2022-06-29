@@ -1,0 +1,23 @@
+- name: Install MariaDB 1
+  become: true
+  pacman:
+    name: mariadb,mysql-workbench
+    tags:
+    - install
+    - core
+
+- name: Install MariaDB 2
+  become: true
+  shell: mariadb-install-db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
+
+- name: Enable MariaDB service
+  become: true
+  shell: sudo systemctl enable mariadb
+
+- name: Install MongoDB
+  become: true
+  shell: yay -S --noconfirm aur/mongodb-bin aur/mongodb-compass aur/mongodb-tools-bin aur/mongosh-bin
+
+- name: Enable MongoDB service
+  become: true
+  shell: sudo systemctl enable mongodb 

@@ -1,0 +1,36 @@
+- name: Install Docker & docker-compose
+  become: true
+  pacman:
+    name: docker,docker-compose
+    tags:
+    - install
+    - core
+
+- name: Enable Docker service
+  become: true
+  shell: sudo systemctl enable docker
+
+- name: Install QEMU & virt-manager
+  become: true
+  pacman:
+    name: qemu,virt-manager,libvirt,dnsmasq,iptables-nft
+    tags:
+    - install
+    - core
+
+- name: Add user to libvirt group
+  become: true
+  shell: usermod -aG libvirt $(whoami)
+
+- name: Enable QEMU
+  become: true
+  shell: sudo systemctl enable libvirtd
+
+- name: Start QEMU
+  become: true
+  shell: sudo systemctl start libvirtd
+
+
+- name: Install Minikube
+  become: true
+  shell: minikube config set driver kvm2

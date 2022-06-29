@@ -1,0 +1,18 @@
+- name: Config Vim with plugins
+  hosts: localhost
+  gather_facts: yes
+  become: no
+  vars:
+    vim_dir: "{{ ansible_env.HOME }}/.config/nvim"
+    vimrc: "{{ ansible_env.HOME }}/.config/nvim/init.vim"
+
+  tasks:
+    - name: Install required packages
+      package:
+        name:
+          - vim-enhanced
+          - git
+          - powerline-fonts
+          - fzf
+        state: installed
+      become: yes

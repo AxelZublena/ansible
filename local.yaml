@@ -1,0 +1,34 @@
+- hosts: localhost
+  vars:
+    source_key: "./.ssh/id_rsa"
+    dest_key: "{{ lookup('env', 'HOME') }}/.ssh/id_rsa"
+    personal: "{{ lookup('env', 'HOME') }}/personal"
+  pre_tasks:
+  - name: Update Pacman
+    become: true
+    pacman:
+      update_cache: yes
+      upgrade: yes
+    tags:
+      - install
+      - core
+  tasks:
+    - include: tasks/pacman.yml
+    - include: tasks/yay.yml
+    - include: tasks/dev-setup.yml
+    - include: tasks/db-setup.yml
+    - include: tasks/bluetooth.yml
+    # - include: tasks/ssh.yml
+    # - include: tasks/git-setup.yml
+    # - include: tasks/core-setup.yml
+    # - include: tasks/node-setup.yml
+    # - include: tasks/npm-packages.yml
+    # - include: tasks/zsh-setup.yml
+    # - include: tasks/slack-setup.yml
+    # - include: tasks/personal-projects.yml
+    # - include: tasks/core-setup.yml
+    # - include: tasks/nvim-setup.yml
+    # - include: tasks/brave.yml
+    # - include: tasks/debugger.yml
+    # - include: tasks/dotfiles.yml
+    # - include: tasks/productivity-tools.yml

@@ -1,0 +1,47 @@
+yay
+azure cli
+java
+intelliJ
+minikube
+docker
+grip
+mongodb
+mysql
+notable
+nodejs
+nvim CONF
+minikube
+steam
+qbittorrent
+chrome
+firefore-dev
+zsh+onmyzsh CONF
+surfshark
+anaconda
+vlc
+vscode (with plug?)
+teams
+mellowplayer
+flameshot
+bluetooth
+qemu
+xclip
+perl
+tree
+php
+unrar
+neofetch
+python
+cups
+fzf
+composer
+virtmanager
+mpv
+obs
+mariadb
+docker-compose
+kdenlive
+blender
+brave-bin
+nerd-fonts-noto
+amd-ucode

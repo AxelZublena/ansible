@@ -1,0 +1,11 @@
+- name: Install Bluez Packages 
+  become: true
+  pacman:
+    name: bluez,bluez-utils
+  tags:
+    - install
+    - core
+
+- name: Enable Bluetooth service
+  become: true
+  shell: sudo systemctl enable bluetooth
