@@ -10,7 +10,7 @@
 - name: Install QEMU & virt-manager
   become: true
   pacman:
-    name: qemu,virt-manager,libvirt,dnsmasq,iptables-nft
+    name: qemu-desktop,virt-manager,libvirt,dnsmasq,iptables-nft
 
 - name: Add user to libvirt group
   become: true
