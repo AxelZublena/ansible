@@ -2,9 +2,6 @@
   become: true
   pacman:
     name: docker,docker-compose
-    tags:
-    - install
-    - core
 
 - name: Enable Docker service
   become: true
@@ -14,9 +11,6 @@
   become: true
   pacman:
     name: qemu,virt-manager,libvirt,dnsmasq,iptables-nft
-    tags:
-    - install
-    - core
 
 - name: Add user to libvirt group
   become: true

@@ -2,7 +2,7 @@
   become: true
   pacman:
     name: mariadb,mysql-workbench
-    tags:
+  tags:
     - install
     - core
 
