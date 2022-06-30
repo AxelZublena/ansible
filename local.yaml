@@ -14,7 +14,6 @@
       repo: https://aur.archlinux.org/yay.git
       dest: ./yay
   - name: Install Yay
-    become: true
     shell: cd yay && makepkg -si --noconfirm && cd .. && rm -rif yay
 
   tasks:
