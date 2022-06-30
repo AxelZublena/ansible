@@ -9,9 +9,14 @@
     pacman:
       update_cache: yes
       upgrade: yes
-    tags:
-      - install
-      - core
+  - name: Clone Yay
+    ansible.builtin.git:
+      repo: https://aur.archlinux.org/yay.git
+      dest: ./yay
+  - name: Install Yay
+    become: true
+    shell: cd yay && makepkg -si --noconfirm && cd .. && rm -rif yay
+
   tasks:
     - include: tasks/pacman.yml
     - include: tasks/yay.yml

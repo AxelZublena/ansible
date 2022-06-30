@@ -1,13 +1,4 @@
-- name: Clone Yay
-  ansible.builtin.git:
-    repo: https://aur.archlinux.org/yay.git
-    dest: ./yay
-
-- name: Install Yay
-  shell: cd yay && makepkg -si --noconfirm && cd .. && rm -rif yay
-
 - name: Install Packages
-  become: true
   shell: yay -S --noconfirm aur/google-chrome aur/surfshark-vpn aur/python-grip notable-bin nodejs-n aur/teams aur/mellowplayer aur/brave-bin
 
 # - name: Install Packages (intellij-idea-community-edition)

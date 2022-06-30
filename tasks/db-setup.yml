@@ -15,7 +15,6 @@
   shell: sudo systemctl enable mariadb
 
 - name: Install MongoDB
-  become: true
   shell: yay -S --noconfirm aur/mongodb-bin aur/mongodb-compass aur/mongodb-tools-bin aur/mongosh-bin
 
 - name: Enable MongoDB service
