@@ -18,14 +18,12 @@
 
   tasks:
     - include: tasks/ssh.yml
-    #- include: tasks/pacman.yml
-    #- include: tasks/yay.yml
-    #- include: tasks/dev-setup.yml
-    #- include: tasks/db-setup.yml
-    #- include: tasks/bluetooth.yml
-    # - include: tasks/ssh.yml
+    - include: tasks/pacman.yml
+    - include: tasks/yay.yml
+    - include: tasks/dev-setup.yml
+    - include: tasks/db-setup.yml
+    - include: tasks/bluetooth.yml
     # - include: tasks/git-setup.yml
-    # - include: tasks/core-setup.yml
     # - include: tasks/node-setup.yml
     # - include: tasks/npm-packages.yml
     # - include: tasks/zsh-setup.yml
