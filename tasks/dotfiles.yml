@@ -6,20 +6,22 @@
     - base
     - dotfiles
     - stow
+- name: Start ssh-agent
+  shell: eval "$(ssh-agent -s)"
 - name: Cloning .dotfiles
   ansible.builtin.git:
     repo: 'git@github.com:AxelZublena/dotfiles.git'
-    dest: "{{ lookup('env', 'HOME') }}/dotfiles"
-    recursive: yes
-    update: yes
-    accept_hostkey: yes
     version: master
+    dest: "{{ lookup('env', 'HOME') }}/dotfiles"
+    key_file: "{{ lookup('env', 'HOME') }}/.ssh/id_ed25519"
+    accept_hostkey: yes
+    update: yes
   tags:
     - base
     - dotfiles
     - stow
 - name: Stow dotfiles
-  shell: cd dotfiles && stow -v -t $HOME *
+  shell: cd $HOME/dotfiles && stow -v -t $HOME *
   tags:
     - base
     - dotfiles
