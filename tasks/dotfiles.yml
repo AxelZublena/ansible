@@ -1,0 +1,26 @@
+- name: Install Default Packages 
+  become: true
+  pacman:
+    name: stow
+  tags:
+    - base
+    - dotfiles
+    - stow
+- name: Cloning .dotfiles
+  ansible.builtin.git:
+    repo: 'git@github.com:AxelZublena/dotfiles.git'
+    dest: "{{ lookup('env', 'HOME') }}/dotfiles"
+    recursive: yes
+    update: yes
+    accept_hostkey: yes
+    version: master
+  tags:
+    - base
+    - dotfiles
+    - stow
+- name: Stow dotfiles
+  shell: cd dotfiles && stow -v -t $HOME *
+  tags:
+    - base
+    - dotfiles
+    - stow

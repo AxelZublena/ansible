@@ -3,9 +3,10 @@
   pacman:
     name: bluez,bluez-utils
   tags:
-    - install
-    - core
+    - base
 
 - name: Enable Bluetooth service
   become: true
   shell: sudo systemctl enable bluetooth
+  tags:
+    - base

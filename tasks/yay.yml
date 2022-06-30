@@ -1,5 +1,7 @@
 - name: Install Packages
   shell: yay -S --noconfirm aur/google-chrome aur/surfshark-vpn aur/python-grip notable-bin nodejs-n aur/teams aur/mellowplayer aur/brave-bin
+  tags:
+    - base
 
 # - name: Install Packages (intellij-idea-community-edition)
 #   shell: yay -S --noconfirm aur/intellij-idea-community-edition

@@ -1,0 +1,20 @@
+- name: Install Default Packages 
+  become: true
+  pacman:
+    name: zsh
+  tags:
+    - base
+    - dotfiles
+    - zsh 
+- name: Change shell to zsh
+  shell: chsh -s $(which zsh)
+  tags:
+    - base
+    - dotfiles
+    - zsh 
+- name: Install Oh-My-Zsh
+  shell: sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  tags:
+    - base
+    - dotfiles
+    - zsh 

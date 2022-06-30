@@ -6,6 +6,8 @@
     line: "[multilib]"
     regexp: "^\\[multilib\\]"
     insertafter: "^#\\[multilib\\]"
+  tags:
+    - base
 - name: Enable multilib 2
   become: true
   lineinfile:
@@ -14,22 +16,27 @@
     line: "Include = /etc/pacman.d/mirrorlist"
     insertafter: "^\\[multilib\\]"
     regexp: "Include = /etc/pacman.d/mirrorlist"
+  tags:
+    - base
 
 - name: Update Pacman
   become: true
   pacman:
     update_cache: yes
     upgrade: yes
+  tags:
+    - base
 
 - name: Install Default Packages 
   become: true
   pacman:
     name: bat,firefox-developer-edition,code,flameshot,htop,obs-studio,qbittorrent,zsh,neofetch,steam,vlc,xclip,perl,tree,php,unrar,python,cups,cups-pdf,fzf,mpv,kdenlive,blender,amd-ucode
   tags:
-    - install
-    - core
+    - base
 
 - name: Enable Cups service
   become: true
   shell: sudo systemctl enable cups.socket
+  tags:
+    - base
 
