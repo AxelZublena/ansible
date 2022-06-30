@@ -2,7 +2,6 @@
   vars:
     source_key: "./.ssh/id_ed25519"
     dest_key: "{{ lookup('env', 'HOME') }}/.ssh/id_ed25519"
-    personal: "{{ lookup('env', 'HOME') }}/personal"
   pre_tasks:
   - name: Update Pacman
     become: true
@@ -17,12 +16,12 @@
     shell: cd yay && makepkg -si --noconfirm && cd .. && rm -rif yay
 
   tasks:
-    - include: tasks/ssh.yml
-    - include: tasks/pacman.yml
-    - include: tasks/yay.yml
-    - include: tasks/dev-setup.yml
-    - include: tasks/db-setup.yml
-    - include: tasks/bluetooth.yml
+    # - include: tasks/ssh.yml
+    # - include: tasks/pacman.yml
+    # - include: tasks/yay.yml
+    # - include: tasks/dev-setup.yml
+    # - include: tasks/db-setup.yml
+    # - include: tasks/bluetooth.yml
     - include: tasks/zsh.yml
     - include: tasks/dotfiles.yml
     # - include: tasks/git-setup.yml

@@ -1,4 +1,4 @@
-- name: Install Default Packages 
+- name: Install zsh 
   become: true
   pacman:
     name: zsh
@@ -13,8 +13,16 @@
     - dotfiles
     - zsh 
 - name: Install Oh-My-Zsh
-  shell: sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  shell: curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh > ~/.oh-my-installer && chmod +x ~/.oh-my-installer && ~/.oh-my-installer
   tags:
     - base
     - dotfiles
     - zsh 
+  when: oh_my_stats.stat.exists == False
+  become_user: axelz
+# - name: Install Oh-My-Zsh
+#   shell: sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+#   tags:
+#     - base
+#     - dotfiles
+#     - zsh 
