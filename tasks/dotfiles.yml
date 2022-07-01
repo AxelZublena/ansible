@@ -23,7 +23,7 @@
     - dotfiles
     - stow
 - name: Stow dotfiles
-  shell: cd $HOME/dotfiles && stow -v -t $HOME *
+  shell: rm $HOME/.zshrc && cd $HOME/dotfiles && stow -v -t $HOME *
   tags:
     - base
     - dotfiles
