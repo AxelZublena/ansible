@@ -25,6 +25,13 @@
     - dotfiles
     - install
     - ssh
+- name: Start ssh-agent
+  shell: git clone git@github.com:AxelZublena/dotfiles $HOME/dotfiles
+  tags:
+    - base
+    - dotfiles
+    - stow
+    - ssh
 # - name: Set authorized key took from file
 #   authorized_key:
 #     user: "{{ lookup('env', 'USER') }}"

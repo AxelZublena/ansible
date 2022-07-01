@@ -16,12 +16,12 @@
 #     accept_hostkey: yes
 #     version: master
 #     update: yes
-- name: Start ssh-agent
-  shell: git clone git@github.com:AxelZublena/dotfiles $HOME/dotfiles
-  tags:
-    - base
-    - dotfiles
-    - stow
+# - name: Start ssh-agent
+#   shell: git clone git@github.com:AxelZublena/dotfiles $HOME/dotfiles
+#   tags:
+#     - base
+#     - dotfiles
+#     - stow
 - name: Stow dotfiles
   shell: rm $HOME/.zshrc && cd $HOME/dotfiles && stow -v -t $HOME *
   tags:
