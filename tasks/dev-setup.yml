@@ -60,13 +60,7 @@
 
 - name: Install Rust
   become: true
-  shell: curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-  tags:
-    - base
-    - dev
-- name: Install Azure CLI
-  become: true
-  shell: curl -L https://aka.ms/InstallAzureCli | bash
+  shell: curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
   tags:
     - base
     - dev
