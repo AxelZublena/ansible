@@ -10,7 +10,7 @@
   shell: eval "$(ssh-agent -s)"
 - name: Cloning .dotfiles
   ansible.builtin.git:
-    repo: 'git@github.com:AxelZublena/dotfiles.git'
+    repo: 'git@github.com:AxelZublena/dotfiles'
     version: master
     dest: "{{ lookup('env', 'HOME') }}/dotfiles"
     key_file: "{{ lookup('env', 'HOME') }}/.ssh/id_ed25519"
