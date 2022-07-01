@@ -42,7 +42,6 @@
     - base
     - dev
 
-
 - name: Install QEMU & virt-manager
   become: true
   pacman:
