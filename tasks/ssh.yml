@@ -25,15 +25,6 @@
     - dotfiles
     - install
     - ssh
-- name: Install known_hosts
-  copy:
-    src: "./.ssh/known_hosts"
-    dest: "{{ lookup('env', 'HOME') }}/.ssh/known_hosts"
-    mode: 0600
-  tags:
-    - dotfiles
-    - install
-    - ssh
 # - name: Set authorized key took from file
 #   authorized_key:
 #     user: "{{ lookup('env', 'USER') }}"
