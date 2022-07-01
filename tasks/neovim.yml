@@ -1,0 +1,6 @@
+- name: Install Default Packages 
+  become: true
+  pacman:
+    name: neovim
+  tags:
+    - nvim

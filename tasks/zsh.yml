@@ -6,13 +6,6 @@
     - base
     - dotfiles
     - zsh 
-- name: Change shell to zsh
-  become: true
-  shell: chsh -s $(which zsh)
-  tags:
-    - base
-    - dotfiles
-    - zsh 
 - name: Install Oh-My-Zsh
   become: true
   shell: sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -21,3 +14,9 @@
     - base
     - dotfiles
     - zsh
+- name: Change shell to zsh
+  shell: chsh -s $(which zsh)
+  tags:
+    - base
+    - dotfiles
+    - zsh 

@@ -23,6 +23,7 @@
     - include: tasks/db-setup.yml
     - include: tasks/bluetooth.yml
     - include: tasks/zsh.yml
+    - include: tasks/neovim.yml
     - include: tasks/dotfiles.yml
     # - include: tasks/git-setup.yml
     # - include: tasks/node-setup.yml
