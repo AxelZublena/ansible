@@ -4,3 +4,28 @@
     name: neovim
   tags:
     - nvim
+
+- name: Install vim-plug
+  become: true
+  shell: sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+                                                                https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  tags:
+    - nvim
+
+- name: Install Neovim plugins 
+  become: true
+  shell: nvim --headless +'PlugInstall --sync' +'PlugUpdate' +qall
+  tags:
+    - nvim
+
+- name: Install Language Servers
+  become: true
+  shell: sudo npm install -g pyright typescript typescript-language-server vim-language-server svelte-language-server @tailwindcss/language-server dockerfile-language-server-nodejs vscode-langservers-extracted
+  tags:
+    - nvim
+
+- name: Install Language Servers 2
+  become: true
+  shell: yarn global add yaml-language-server
+  tags:
+    - nvim

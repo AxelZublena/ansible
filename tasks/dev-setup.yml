@@ -57,9 +57,27 @@
     - base
     - dev
 
-- name: Install Rust
-  become: true
+- name: Install Rust 1
   shell: curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+  tags:
+    - base
+    - dev
+- name: Install Rust 2
+  shell: rustup component add rust-src
+  tags:
+    - base
+    - dev
+- name: Install Rust 3
+  become: true
+  pacman:
+    name: rust-analyzer
+  tags:
+    - base
+    - dev
+
+- name: Install Node
+  become: true
+  shell: sudo n latest
   tags:
     - base
     - dev

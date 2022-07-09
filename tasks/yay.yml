@@ -1,5 +1,5 @@
 - name: Install Packages
-  shell: yay -S --noconfirm aur/google-chrome aur/surfshark-vpn aur/python-grip notable-bin nodejs-n aur/teams aur/mellowplayer aur/brave-bin aur/azure-cli
+  shell: yay -S --noconfirm aur/google-chrome aur/surfshark-vpn aur/python-grip notable-bin nodejs-n aur/teams aur/mellowplayer aur/brave-bin aur/azure-cli aur/nerd-fonts-noto aur/nerd-fonts-ubuntu-mono
   tags:
     - base
 
