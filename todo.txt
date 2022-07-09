@@ -22,3 +22,5 @@ remove confirmation of logout
 Power settings
 
 Konsole settings
+
+WinApps

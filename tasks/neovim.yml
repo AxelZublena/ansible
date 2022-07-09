@@ -1,17 +1,3 @@
-- name: Install Default Packages 
-  become: true
-  pacman:
-    name: neovim
-  tags:
-    - nvim
-
-- name: Install vim-plug
-  become: true
-  shell: sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-                                                                https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-  tags:
-    - nvim
-
 - name: Install Neovim plugins 
   become: true
   shell: nvim --headless +'PlugInstall --sync' +'PlugUpdate' +qall
