@@ -74,14 +74,8 @@
   tags:
     - base
     - dev
-- name: Install Rust 1.4
-  become: true
-  shell: source $HOME/.cargo/env
-  tags:
-    - base
-    - dev
 - name: Install Rust 2
-  shell: rustup component add rust-src
+  shell: $HOME/.cargo/bin/rustup component add rust-src
   tags:
     - base
     - dev
