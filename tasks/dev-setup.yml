@@ -70,7 +70,13 @@
     - dev
 - name: Install Rust 1.3
   become: true
-  shell: ./rust.sh -y && source $HOME/.cargo/env
+  shell: ./rust.sh -y
+  tags:
+    - base
+    - dev
+- name: Install Rust 1.4
+  become: true
+  shell: source $HOME/.cargo/env
   tags:
     - base
     - dev
