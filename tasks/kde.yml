@@ -1,0 +1,5 @@
+- name: Set Keyboard
+  shell: xset r rate 400 25 
+  tags:
+    - base
+    - kde

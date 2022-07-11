@@ -1,12 +1,25 @@
-ubuntu font (+ patched)
-OR
-NotoSans Nerd Font
-adobe-source-han-sans-jp-fonts
-adobe-source-han-sans-kr-fonts
-adobe-source-han-serif-kr-fonts
-adobe-source-han-*
+## Style
+* $HOME/.kde4/share/config/kdeglobals
+* $HOME/.config/:
+	* konsolerc
+	* kscreenlockerrc
+	* dolphinrc
+	* kactivitymanagerd-statsrc
+	* kaccessrc
+	* kdeglobals
+	* ksplashrc
+	* ktimezonedrc
+	* kiorc
+	* kwinrc
+	* mimeapps.list
+	* plasma-localerc
+	* plasmarc
+	* powermanagementprofilesrc
+	* autostart/
+	* kdedefault/
+* $HOME/.local/share/plasma
 
-Style
+
 
 faster make compilation
 
