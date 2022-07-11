@@ -1,5 +1,10 @@
-- name: Set Keyboard
+- name: Set Keyboard rate
   shell: xset r rate 400 25 
+  tags:
+    - base
+    - kde
+- name: Set Compose key
+  shell: setxkbmap -option compose:paus
   tags:
     - base
     - kde

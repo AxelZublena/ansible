@@ -25,10 +25,6 @@ faster make compilation
 
 CPU microcode?
 
-mouse and keyboard speed
-* delay= 400ms
-* rate= 25.00 repeats/s
-
 Position of Compose key = Pause
 
 remove confirmation of logout
