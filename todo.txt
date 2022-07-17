@@ -19,17 +19,4 @@
 	* kdedefault/
 * $HOME/.local/share/plasma
 
-
-
-faster make compilation
-
-CPU microcode?
-
-Position of Compose key = Pause
-
-remove confirmation of logout
-Power settings
-
-Konsole settings
-
 WinApps

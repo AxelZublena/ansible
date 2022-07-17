@@ -1,4 +1,10 @@
 - name: Install Packages
+  become: true
+  shell: cp ./makepkg.conf /etc/makepkg.conf
+  tags:
+    - base
+
+- name: Install Packages
   shell: yay -S --noconfirm aur/google-chrome aur/surfshark-vpn aur/python-grip notable-bin nodejs-n aur/teams aur/mellowplayer aur/brave-bin aur/azure-cli aur/nerd-fonts-noto aur/nerd-fonts-ubuntu-mono aur/vim-plug-git
   tags:
     - base
