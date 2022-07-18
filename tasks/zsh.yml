@@ -14,10 +14,18 @@
     - base
     - dotfiles
     - zsh
-- name: Change shell to zsh
+- name: Change default shell to zsh
   become: true
-  shell: chsh -s $(which zsh)
+  shell: "chsh -s $(which zsh) axelz"
   tags:
     - base
     - dotfiles
     - zsh 
+
+# - name: Change shell to zsh
+#   become: true
+#   shell: chsh -s $(which zsh)
+#   tags:
+#     - base
+#     - dotfiles
+#     - zsh 
