@@ -12,3 +12,8 @@
     - base
     - dotfiles
     - stow
+- name: Copy KDE conf
+  shell: cd $HOME/dotfiles && cp -r .kde/. $HOME/
+  tags:
+    - base
+    - dotfiles
