@@ -30,7 +30,7 @@
 - name: Install Default Packages 
   become: true
   pacman:
-    name: bat,firefox-developer-edition,code,flameshot,htop,obs-studio,qbittorrent,zsh,neofetch,steam,vlc,xclip,perl,tree,php,unrar,python,cups,cups-pdf,fzf,mpv,kdenlive,blender,amd-ucode,zsh-completions,yarn,noto-fonts-cjk,neovim
+    name: bat,firefox-developer-edition,code,flameshot,htop,obs-studio,qbittorrent,zsh,neofetch,steam,vlc,xclip,perl,tree,php,unrar,python,cups,cups-pdf,fzf,mpv,kdenlive,blender,amd-ucode,zsh-completions,yarn,noto-fonts-cjk,neovim,man-db,materia-kde,kvantum-theme-materia
   tags:
     - base
 
