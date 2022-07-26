@@ -16,6 +16,7 @@
     shell: cd yay && makepkg -si --noconfirm && cd .. && rm -rif yay
 
   tasks:
+    - include_tasks: tasks/boot.yml
     - include_tasks: tasks/ssh.yml
     - include_tasks: tasks/pacman.yml
     - include_tasks: tasks/yay.yml
