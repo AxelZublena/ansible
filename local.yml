@@ -8,6 +8,10 @@
     pacman:
       update_cache: yes
       upgrade: yes
+  - name: Install OpenSSH
+    become: true
+    pacman:
+      name: openssh
   - name: Clone Yay
     ansible.builtin.git:
       repo: https://aur.archlinux.org/yay.git
