@@ -13,6 +13,20 @@
     - base
     - dev
 
+- name: Create Docker group
+  become: true
+  shell: sudo groupadd docker
+  tags:
+    - base
+    - dev
+
+- name: Set Docker permission
+  become: true
+  shell: sudo usermod -aG docker $USER
+  tags:
+    - base
+    - dev
+
 - name: Install QEMU & virt-manager
   become: true
   pacman:
