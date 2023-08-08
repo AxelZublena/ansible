@@ -1,75 +1,85 @@
-- name: Install Docker & docker-compose
+- name: Install Node JS
   become: true
-  pacman:
-    name: docker,docker-compose
+  shell: sudo n latest
   tags:
     - base
     - dev
 
-- name: Enable Docker service
-  become: true
-  shell: sudo systemctl enable docker
-  tags:
-    - base
-    - dev
+# - name: Install Docker & docker-compose
+#   become: true
+#   pacman:
+#     name: docker,docker-compose
+#   tags:
+#     - base
+#     - dev
+#
+# - name: Enable Docker service
+#   become: true
+#   shell: sudo systemctl enable docker
+#   tags:
+#     - base
+#     - dev
+#
+# - name: Create Docker group
+#   become: true
+#   shell: sudo groupadd docker
+#   tags:
+#     - base
+#     - dev
+#
+# - name: Set Docker permission
+#   become: true
+#   shell: sudo usermod -aG docker $USER
+#   tags:
+#     - base
+#     - dev
+#
+# - name: Install QEMU & virt-manager
+#   become: true
+#   pacman:
+#     name: qemu-desktop,virt-manager,libvirt,dnsmasq,iptables
+#   tags:
+#     - base
+#     - dev
+#
+# - name: Add user to libvirt group
+#   become: true
+#   shell: usermod -aG libvirt $(whoami)
+#   tags:
+#     - base
+#     - dev
+#
+# - name: Enable QEMU
+#   become: true
+#   shell: sudo systemctl enable libvirtd
+#   tags:
+#     - base
+#     - dev
+#
+# - name: Start QEMU
+#   become: true
+#   shell: sudo systemctl start libvirtd
+#   tags:
+#     - base
+#     - dev
+#
+# - name: Install QEMU & virt-manager
+#   become: true
+#   pacman:
+#     name: minikube 
+#   tags:
+#     - base
+#     - dev
+#
+# - name: Install Minikube
+#   become: true
+#   shell: minikube config set driver kvm2
+#   tags:
+#     - base
+#     - dev
 
-- name: Create Docker group
-  become: true
-  shell: sudo groupadd docker
-  tags:
-    - base
-    - dev
 
-- name: Set Docker permission
-  become: true
-  shell: sudo usermod -aG docker $USER
-  tags:
-    - base
-    - dev
 
-- name: Install QEMU & virt-manager
-  become: true
-  pacman:
-    name: qemu-desktop,virt-manager,libvirt,dnsmasq,iptables
-  tags:
-    - base
-    - dev
-
-- name: Add user to libvirt group
-  become: true
-  shell: usermod -aG libvirt $(whoami)
-  tags:
-    - base
-    - dev
-
-- name: Enable QEMU
-  become: true
-  shell: sudo systemctl enable libvirtd
-  tags:
-    - base
-    - dev
-
-- name: Start QEMU
-  become: true
-  shell: sudo systemctl start libvirtd
-  tags:
-    - base
-    - dev
-
-- name: Install QEMU & virt-manager
-  become: true
-  pacman:
-    name: minikube 
-  tags:
-    - base
-    - dev
-
-- name: Install Minikube
-  become: true
-  shell: minikube config set driver kvm2
-  tags:
-    - base
-    - dev
 
 # - name: Install Rust 1.1
 #   shell: curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs -o rust.sh
@@ -101,9 +111,3 @@
 #     - base
 #     - dev
 
-- name: Install Node JS
-  become: true
-  shell: sudo n latest
-  tags:
-    - base
-    - dev

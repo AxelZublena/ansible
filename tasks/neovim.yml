@@ -1,3 +1,14 @@
+- name: Install Packer
+  shell: yay -S --noconfirm aur/nvim-packer-git
+  tags:
+    - nvim
+
+- name: Install Neovim plugins 
+  become: true
+  shell: nvim --headless +'PackerSync' +qall
+  tags:
+    - nvim
+
 # - name: Install Neovim plugins 
 #   become: true
 #   shell: nvim --headless +'PlugInstall --sync' +'PlugUpdate' +qall
