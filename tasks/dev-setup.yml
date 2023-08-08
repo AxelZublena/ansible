@@ -101,7 +101,7 @@
 #     - base
 #     - dev
 
-- name: Install Node
+- name: Install Node JS
   become: true
   shell: sudo n latest
   tags:
