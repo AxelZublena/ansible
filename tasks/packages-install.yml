@@ -2,11 +2,10 @@
   become: true
   pacman:
     update_cache: yes
-    upgrade: yes
   tags:
     - base
 
-- name: Install Default packages
+- name: Install Default packages (Pacman)
   become: true
   pacman:
     name: 
@@ -22,7 +21,7 @@
   tags:
     - base
 
-- name: Install Default Applications
+- name: Install Default Applications (Pacman)
   become: true
   pacman:
     name: 
@@ -31,25 +30,22 @@
       - flameshot
       - obs-studio
       - steam
-      - teams
       - vlc
       - qbittorrent
       - kdenlive
       - blender
       - mpv
-      - figma-linux-bin
-      - freeoffice
       - gerbera
-      - google-chrome
-      - inkdrop
-      - mellowplayer
   tags:
     - base
 
+- name: Install Default Packages (AUR)
+  shell: yay -S --noconfirm aur/ms-teams-for-linux-bin aur/freeoffice aur/figma-linux-bin aur/google-chrome aur/inkdrop aur/mellowplayer
+  tags:
+    - base
 
 - name: Enable Cups service
   become: true
   shell: sudo systemctl enable cups.socket
   tags:
     - base
-

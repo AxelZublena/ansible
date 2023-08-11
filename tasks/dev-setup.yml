@@ -1,4 +1,4 @@
-- name: Install Development packages
+- name: Install Development Packages (Pacman)
   become: true
   pacman:
     name: 
@@ -6,7 +6,6 @@
       - bat
       - code
       - neovim
-      - nvim-packer-git
       - zsh
       - zsh-completions
       - xclip
@@ -20,8 +19,7 @@
       - tldr
       - autoconf
       - automake
-      - aws-cli
-      - azure-cli
+      - aws-cli-v2
       - docker
       - docker-compose
       - composer
@@ -29,29 +27,24 @@
       - filezilla
       - freerdp
       - gawk
-      - ubertooth-git
       - helm
       - kubectl
       - konsole
-      - mariadb
-      - mongodb-bin
-      - mongodb-compass
-      - mongodb-tools-bin
-      - mongosh-bin
       - mysql-workbench
-      - nodejs-n
-      - openssh
       - postgresql
-      - postman-bin
       - putty
       - pycharm-cummunity-edition
       - intellij-idea-community-edition
-      - python-grip
       - stow
       - virt-manager
   tags:
     - base
     - dev
+
+- name: Install Development Packages (AUR)
+  shell: yay -S --noconfirm aur/nvim-packer-git aur/azure-cli-bin aur/nodejs-n aur/postman-bin aur/python-grip
+  tags:
+    - base
 
 - name: Install Node JS
   become: true

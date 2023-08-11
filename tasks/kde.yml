@@ -1,4 +1,4 @@
-- name: Install KDE/Styling packages
+- name: Install KDE/Styling packages (Pacman)
   become: true
   pacman:
     name: 
@@ -21,11 +21,17 @@
       - kvantum-theme-materia
       - noto-fonts-cjk
       - noto-fonts-emoji
+      - noto-fonts-extra
       - materia-kde
       - markdownpart
       - okular
       - ttf-noto-nerd
       - ttf-ubuntu-mono-nerd
+  tags:
+    - base
+
+- name: Install KDE/Styling packages (AUR)
+  shell: yay -S --noconfirm aur/heifthumbnailer
   tags:
     - base
 

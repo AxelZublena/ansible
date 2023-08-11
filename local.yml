@@ -21,6 +21,9 @@
 
   tasks:
     - include_tasks: tasks/infosec.yml
+    - include_tasks: tasks/kde.yml
+    - include_tasks: tasks/dev-setup.yml
+    - include_tasks: tasks/packages-install.yml
     # - include_tasks: tasks/boot.yml
     # - include_tasks: tasks/ssh.yml
     # - include_tasks: tasks/pacman.yml
