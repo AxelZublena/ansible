@@ -1,6 +1,6 @@
 - name: Add ArchStrike repo
   become: true
-  shell: sudo echo "[archstrike]\nServer = https://mirror.archstrike.org/$arch/$repo" > /etc/pacman.conf
+  shell: sudo echo "[archstrike]\nServer = https://mirror.archstrike.org/$arch/$repo" >> /etc/pacman.conf
   tags:
     - base
 
