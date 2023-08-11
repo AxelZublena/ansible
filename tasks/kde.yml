@@ -1,3 +1,34 @@
+- name: Install KDE/Styling packages
+  become: true
+  pacman:
+    name: 
+      - dolphin
+      - dolphin-plugins
+      - ffmpegthumbs
+      - gwenview
+      - heifthumbnailer
+      - kcalc
+      - kcolorchooser
+      - kdegraphics-thumbnailers
+      - kdenlive
+      - kdesk-kio
+      - kdesdk-thumbnailers
+      - kdiskmark
+      - kimageformats
+      - konsole
+      - kora-icon-theme
+      - ksystemlog
+      - kvantum-theme-materia
+      - noto-fonts-cjk
+      - noto-fonts-emoji
+      - materia-kde
+      - markdownpart
+      - okular
+      - ttf-noto-nerd
+      - ttf-ubuntu-mono-nerd
+  tags:
+    - base
+
 - name: Set Keyboard rate
   shell: xset r rate 400 25 
   tags:

@@ -1,0 +1,55 @@
+- name: Update Pacman
+  become: true
+  pacman:
+    update_cache: yes
+    upgrade: yes
+  tags:
+    - base
+
+- name: Install Default packages
+  become: true
+  pacman:
+    name: 
+      - htop
+      - neofetch
+      - cups
+      - cups-pdf
+      - amd-ucode
+      - f2fs-tools
+      - gzip
+      - pipewire
+      - pipewire-pulse
+  tags:
+    - base
+
+- name: Install Default Applications
+  become: true
+  pacman:
+    name: 
+      - firefox-developer-edition
+      - discord
+      - flameshot
+      - obs-studio
+      - steam
+      - teams
+      - vlc
+      - qbittorrent
+      - kdenlive
+      - blender
+      - mpv
+      - figma-linux-bin
+      - freeoffice
+      - gerbera
+      - google-chrome
+      - inkdrop
+      - mellowplayer
+  tags:
+    - base
+
+
+- name: Enable Cups service
+  become: true
+  shell: sudo systemctl enable cups.socket
+  tags:
+    - base
+

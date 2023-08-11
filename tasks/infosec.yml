@@ -1,0 +1,49 @@
+- name: Add ArchStrike repo
+  become: true
+  shell: sudo echo "[archstrike]\nServer = https://mirror.archstrike.org/$arch/$repo" > /etc/pacman.conf
+  tags:
+    - base
+
+- name: Update Pacman
+  become: true
+  pacman:
+    update_cache: yes
+    upgrade: yes
+  tags:
+    - base
+
+- name: Install InfoSec packages
+  become: true
+  pacman:
+    name: 
+      - aircrack-ng
+      - binutils
+      - binwalk
+      - bison
+      - carwhisperer
+      - dnsmasq
+      - ghidra
+      - gnu-netcat
+      - hash-identifier
+      - hashcat
+      - hexedit
+      - hidattack
+      - john
+      - lynis
+      - net-tools
+      - networkminer
+      - nmap
+      - exiftools
+      - pgpdump
+      - redress
+      - redfang
+      - sha3sum
+      - sonic-visualiser
+      - stream
+      - steghide
+      - tcpdump
+      - traceroute
+      - ubertooth-git
+      - wireshark-gt
+  tags:
+    - base

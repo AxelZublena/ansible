@@ -1,10 +1,64 @@
+- name: Install Development packages
+  become: true
+  pacman:
+    name: 
+      - fzf
+      - bat
+      - code
+      - neovim
+      - nvim-packer-git
+      - zsh
+      - zsh-completions
+      - xclip
+      - perl
+      - tree
+      - unrar
+      - python
+      - php
+      - php-gd
+      - man-db
+      - tldr
+      - autoconf
+      - automake
+      - aws-cli
+      - azure-cli
+      - docker
+      - docker-compose
+      - composer
+      - fd
+      - filezilla
+      - freerdp
+      - gawk
+      - ubertooth-git
+      - helm
+      - kubectl
+      - konsole
+      - mariadb
+      - mongodb-bin
+      - mongodb-compass
+      - mongodb-tools-bin
+      - mongosh-bin
+      - mysql-workbench
+      - nodejs-n
+      - openssh
+      - postgresql
+      - postman-bin
+      - putty
+      - pycharm-cummunity-edition
+      - intellij-idea-community-edition
+      - python-grip
+      - stow
+      - virt-manager
+  tags:
+    - base
+    - dev
+
 - name: Install Node JS
   become: true
   shell: sudo n latest
   tags:
     - base
     - dev
-
 # - name: Install Docker & docker-compose
 #   become: true
 #   pacman:
