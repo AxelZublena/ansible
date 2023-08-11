@@ -1,11 +1,6 @@
 - name: Add ArchStrike repo
   become: true
-  shell: sudo echo -e "[archstrike]\nServer = https://mirror.archstrike.org/\$arch/\$repo" >> /etc/pacman.conf &&
-    sudo pacman-key --init &&
-    dirmngr < /dev/null &&
-    sudo pacman-key -r 9D5F1C051D146843CDA4858BDE64825E7CBC0D51 &&
-    sudo pacman-key --lsign-key 9D5F1C051D146843CDA4858BDE64825E7CBC0D51 &&
-    sudo pacman -S archstrike-keyring archstrike-mirrorlist
+  shell: sudo echo -e "[archstrike]\nServer = https://mirror.archstrike.org/\$arch/\$repo" >> /etc/pacman.conf
   tags:
     - base
 
@@ -17,8 +12,17 @@
   tags:
     - base
 
+- name: Install ArchStrike keyring
+  become: true
+  shell: sudo pacman-key --init &&
+    dirmngr < /dev/null &&
+    sudo pacman-key -r 9D5F1C051D146843CDA4858BDE64825E7CBC0D51 &&
+    sudo pacman-key --lsign-key 9D5F1C051D146843CDA4858BDE64825E7CBC0D51 &&
+    sudo pacman -S archstrike-keyring archstrike-mirrorlist
+  tags:
+    - base
 
-- name: Install InfoSec packages
+- name: Install InfoSec Packages (Pacman)
   become: true
   pacman:
     name: 
@@ -49,7 +53,7 @@
   tags:
     - base
 
-- name: Install Packages
+- name: Install InfoSec Packages (AUR)
   shell: yay -S --noconfirm aur/hash-identifier-git aur/hidattack aur/networkminer aur/redress aur/steghide
   tags:
     - base
