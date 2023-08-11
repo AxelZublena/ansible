@@ -1,6 +1,11 @@
 - name: Add ArchStrike repo
   become: true
-  shell: sudo echo -e "[archstrike]\nServer = https://mirror.archstrike.org/\$arch/\$repo" >> /etc/pacman.conf
+  shell: sudo echo -e "[archstrike]\nServer = https://mirror.archstrike.org/\$arch/\$repo" >> /etc/pacman.conf &&
+    sudo pacman-key --init &&
+    dirmngr < /dev/null &&
+    sudo pacman-key -r 9D5F1C051D146843CDA4858BDE64825E7CBC0D51 &&
+    sudo pacman-key --lsign-key 9D5F1C051D146843CDA4858BDE64825E7CBC0D51 &&
+    sudo pacman -S archstrike-keyring archstrike-mirrorlist
   tags:
     - base
 
