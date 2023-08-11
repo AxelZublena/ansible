@@ -4,23 +4,36 @@
   tags:
     - base
 
-- name: Update Pacman
+- name: Update Pacman cache
   become: true
   pacman:
     update_cache: yes
-    upgrade: yes
   tags:
     - base
 
+# - name: Install ArchStrike keyring
+#   become: true
+#   shell: sudo pacman-key --init &&
+#     dirmngr < /dev/null &&
+#     sudo pacman-key -r 9D5F1C051D146843CDA4858BDE64825E7CBC0D51 &&
+#     sudo pacman-key --lsign-key 9D5F1C051D146843CDA4858BDE64825E7CBC0D51 &&
+#     sudo pacman -S archstrike-keyring archstrike-mirrorlist
+#   tags:
+#     - base
+
 - name: Install ArchStrike keyring
   become: true
-  shell: sudo pacman-key --init &&
-    dirmngr < /dev/null &&
-    sudo pacman-key -r 9D5F1C051D146843CDA4858BDE64825E7CBC0D51 &&
-    sudo pacman-key --lsign-key 9D5F1C051D146843CDA4858BDE64825E7CBC0D51 &&
-    sudo pacman -S archstrike-keyring archstrike-mirrorlist
-  tags:
-    - base
+  community.general.pacman_key:
+    id: 9D5F1C051D146843CDA4858BDE64825E7CBC0D51
+    url: https://archstrike.org/keyfile.asc
+    state: present
+
+- name: Install ArchStrike Keyring Packages 
+  become: true
+  pacman:
+    name: 
+      - archstrike-keyring
+      - archstrike-mirrorlist
 
 - name: Install InfoSec Packages (Pacman)
   become: true
