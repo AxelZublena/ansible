@@ -18,24 +18,25 @@
       dest: ./yay
   - name: Install Yay
     shell: cd yay && makepkg -si --noconfirm && cd .. && rm -rif yay
+  - name: Configure Yay
+    become: true
+    shell: cp ./makepkg.conf /etc/makepkg.conf
+    tags:
+      - base
 
   tasks:
-    - include_tasks: tasks/pacman.yml
-    - include_tasks: tasks/infosec.yml
-    - include_tasks: tasks/kde.yml
-    - include_tasks: tasks/dev-setup.yml
-    - include_tasks: tasks/packages-install.yml
-    # - include_tasks: tasks/boot.yml
-    # - include_tasks: tasks/ssh.yml
     # - include_tasks: tasks/pacman.yml
-    # - include_tasks: tasks/yay.yml
-    # - include_tasks: tasks/dev-setup.yml
+    # - include_tasks: tasks/infosec.yml
+    # - include_tasks: tasks/kde.yml
+    - include_tasks: tasks/dev-setup.yml
+    # - include_tasks: tasks/packages-install.yml
+    # - include_tasks: tasks/ssh.yml
     # - include_tasks: tasks/db-setup.yml
     # - include_tasks: tasks/bluetooth.yml
     # - include_tasks: tasks/zsh.yml
     # - include_tasks: tasks/dotfiles.yml
     # - include_tasks: tasks/neovim.yml
-    # - include_tasks: tasks/kde.yml
+    # - include_tasks: tasks/boot.yml
 
     # - include_tasks: tasks/git-setup.yml
     # - include_tasks: tasks/node-setup.yml

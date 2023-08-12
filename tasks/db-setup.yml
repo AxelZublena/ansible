@@ -1,13 +1,13 @@
-- name: Install MariaDB 1
+- name: Install MariaDB
   become: true
   pacman:
-    name: mariadb,mysql-workbench
+    name: mariadb
   tags:
     - base
     - dev
     - db
 
-- name: Install MariaDB 2
+- name: Configure MariaDB
   become: true
   shell: mariadb-install-db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
   tags:
