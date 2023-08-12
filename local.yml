@@ -25,28 +25,15 @@
       - base
 
   tasks:
-    # - include_tasks: tasks/pacman.yml
-    # - include_tasks: tasks/infosec.yml
-    # - include_tasks: tasks/kde.yml
+    - include_tasks: tasks/pacman.yml
+    - include_tasks: tasks/infosec.yml
+    - include_tasks: tasks/kde.yml
     - include_tasks: tasks/dev-setup.yml
-    # - include_tasks: tasks/packages-install.yml
-    # - include_tasks: tasks/ssh.yml
-    # - include_tasks: tasks/db-setup.yml
-    # - include_tasks: tasks/bluetooth.yml
-    # - include_tasks: tasks/zsh.yml
-    # - include_tasks: tasks/dotfiles.yml
-    # - include_tasks: tasks/neovim.yml
+    - include_tasks: tasks/packages-install.yml
+    - include_tasks: tasks/ssh.yml
+    - include_tasks: tasks/db-setup.yml
+    - include_tasks: tasks/bluetooth.yml
+    - include_tasks: tasks/zsh.yml
+    - include_tasks: tasks/dotfiles.yml
+    - include_tasks: tasks/neovim.yml
     # - include_tasks: tasks/boot.yml
-
-    # - include_tasks: tasks/git-setup.yml
-    # - include_tasks: tasks/node-setup.yml
-    # - include_tasks: tasks/npm-packages.yml
-    # - include_tasks: tasks/zsh-setup.yml
-    # - include_tasks: tasks/slack-setup.yml
-    # - include_tasks: tasks/personal-projects.yml
-    # - include_tasks: tasks/core-setup.yml
-    # - include_tasks: tasks/nvim-setup.yml
-    # - include_tasks: tasks/brave.yml
-    # - include_tasks: tasks/debugger.yml
-    # - include_tasks: tasks/dotfiles.yml
-    # - include_tasks: tasks/productivity-tools.yml

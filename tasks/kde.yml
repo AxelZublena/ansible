@@ -27,11 +27,13 @@
       - ttf-ubuntu-mono-nerd
   tags:
     - base
+    - kde
 
 - name: Install KDE/Styling packages (AUR)
   shell: yay -S --noconfirm aur/heifthumbnailer aur/kora-icon-theme
   tags:
     - base
+    - kde
 
 - name: Set Keyboard rate
   shell: xset r rate 400 25 

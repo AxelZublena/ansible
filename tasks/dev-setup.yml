@@ -38,33 +38,29 @@
       - stow
       - virt-manager
   tags:
-    - base
     - dev
 
 - name: Install Development Packages (AUR)
   shell: yay -S --noconfirm aur/nvim-packer-git aur/azure-cli-bin aur/nodejs-n aur/postman-bin aur/python-grip
   tags:
-    - base
+    - dev
 
 - name: Install Node JS
   become: true
   shell: sudo n latest
   tags:
-    - base
     - dev
 
 - name: Enable Docker service
   become: true
   shell: sudo systemctl enable docker
   tags:
-    - base
     - dev
 
 - name: Set Docker permission
   become: true
   shell: sudo usermod -aG docker $USER
   tags:
-    - base
     - dev
 
 - name: Install QEMU & virt-manager
@@ -72,26 +68,22 @@
   pacman:
     name: qemu-desktop,virt-manager,libvirt,dnsmasq,iptables
   tags:
-    - base
     - dev
 
 - name: Add user to libvirt group
   become: true
   shell: usermod -aG libvirt $(whoami)
   tags:
-    - base
     - dev
 
 - name: Enable QEMU
   become: true
   shell: sudo systemctl enable libvirtd
   tags:
-    - base
     - dev
 
 - name: Start QEMU
   become: true
   shell: sudo systemctl start libvirtd
   tags:
-    - base
     - dev

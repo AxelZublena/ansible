@@ -2,14 +2,14 @@
   become: true
   shell: sudo echo -e "[archstrike]\nServer = https://mirror.archstrike.org/\$arch/\$repo" >> /etc/pacman.conf
   tags:
-    - base
+    - infosec
 
 - name: Update Pacman cache
   become: true
   pacman:
     update_cache: yes
   tags:
-    - base
+    - infosec
 
 - name: Install ArchStrike keyring
   become: true
@@ -17,6 +17,8 @@
     id: 9D5F1C051D146843CDA4858BDE64825E7CBC0D51
     url: https://archstrike.org/keyfile.asc
     state: present
+  tags:
+    - infosec
 
 - name: Install ArchStrike Keyring Packages 
   become: true
@@ -24,6 +26,8 @@
     name: 
       - archstrike-keyring
       - archstrike-mirrorlist
+  tags: 
+    - infosec
 
 - name: Install InfoSec Packages (Pacman)
   become: true
@@ -55,8 +59,9 @@
       - wireshark-qt
   tags:
     - base
+    - infosec
 
 - name: Install InfoSec Packages (AUR)
   shell: yay -S --noconfirm aur/hash-identifier-git aur/networkminer aur/redress aur/steghide
   tags:
-    - base
+    - infosec

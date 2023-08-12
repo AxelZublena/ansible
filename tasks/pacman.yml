@@ -8,6 +8,8 @@
     insertafter: "^#\\[multilib\\]"
   tags:
     - base
+    - pacman
+
 - name: Enable multilib 2
   become: true
   lineinfile:
@@ -18,6 +20,7 @@
     regexp: "Include = /etc/pacman.d/mirrorlist"
   tags:
     - base
+    - pacman
 
 - name: Update Pacman
   become: true
@@ -25,3 +28,4 @@
     update_cache: yes
   tags:
     - base
+    - pacman
