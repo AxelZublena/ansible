@@ -23,20 +23,5 @@
   become: true
   pacman:
     update_cache: yes
-    upgrade: yes
   tags:
     - base
-
-- name: Install Default Packages 
-  become: true
-  pacman:
-    name: bat,firefox-developer-edition,code,flameshot,htop,obs-studio,qbittorrent,zsh,neofetch,steam,vlc,xclip,perl,tree,php,unrar,python,cups,cups-pdf,fzf,mpv,kdenlive,blender,amd-ucode,zsh-completions,yarn,noto-fonts-cjk,neovim,man-db,materia-kde,kvantum-theme-materia,discord
-  tags:
-    - base
-
-- name: Enable Cups service
-  become: true
-  shell: sudo systemctl enable cups.socket
-  tags:
-    - base
-

@@ -15,7 +15,6 @@
       - kdiskmark
       - kimageformats
       - konsole
-      - kora-icon-theme
       - ksystemlog
       - kvantum-theme-materia
       - noto-fonts-cjk
@@ -30,7 +29,7 @@
     - base
 
 - name: Install KDE/Styling packages (AUR)
-  shell: yay -S --noconfirm aur/heifthumbnailer
+  shell: yay -S --noconfirm aur/heifthumbnailer aur/kora-icon-theme
   tags:
     - base
 
