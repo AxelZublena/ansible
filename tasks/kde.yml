@@ -10,7 +10,7 @@
       - kcolorchooser
       - kdegraphics-thumbnailers
       - kdenlive
-      - kdesk-kio
+      - kdesdk-kio
       - kdesdk-thumbnailers
       - kdiskmark
       - kimageformats
