@@ -53,24 +53,9 @@
     - base
     - dev
 
-- name: Install Docker & docker-compose
-  become: true
-  pacman:
-    name: docker,docker-compose
-  tags:
-    - base
-    - dev
-
 - name: Enable Docker service
   become: true
   shell: sudo systemctl enable docker
-  tags:
-    - base
-    - dev
-
-- name: Create Docker group
-  become: true
-  shell: sudo groupadd docker
   tags:
     - base
     - dev
