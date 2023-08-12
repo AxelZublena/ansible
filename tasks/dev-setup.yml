@@ -95,11 +95,3 @@
   tags:
     - base
     - dev
-
-- name: Install QEMU & virt-manager
-  become: true
-  pacman:
-    name: minikube 
-  tags:
-    - base
-    - dev
